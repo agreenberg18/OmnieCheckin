@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="height=device-height, initial-scale=1">
+	<script src="https://use.typekit.net/otv1kpu.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
+	<link rel=StyleSheet href="css/style.css" type="text/css">
+
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<meta name="apple-mobile-web-app-title" content="Add to Home">
+
+	<link rel="apple-touch-icon" href="images/omnie.png">
+		<link rel="stylesheet" type="text/css" href="css/addtohomescreen.css">
+
+	<script src="js/addtohomescreen.js"></script>
+	<script>
+		addToHomescreen();
+	</script>		
+</head>
+<body>
+	<div class="topLoginContainer">
+		<div class="date">
+			<p class="insideDate"></p>
+		</div>
+		
+		<div class="welcomeName" style="display:none;">
+			<p><span class="replaceName">%Person%</span>,<br>
+			<br>
+			Welcome to Omnie Solutions
+			</p>
+		</div>
+
+<!-- 		<div class="welcomeAfter" style="display:none;">
+			<p><span class="replaceName">%Person%</span>,<br>
+			<br>
+			Good Night, Have a Great Day Ahead!
+			</p>
+		</div>	 -->	
+
+		<div class="checkTimeContainer" style="display:none;">
+			<div class="checkinTime" style="display:none;">
+				<p class="checkinoutText1st">CHECK-IN</p>
+				<p class="textCheckin"></p>
+			</div>
+			<div class="checkinTime2" style="display:none;">
+				<p class="checkinoutText">CHECK-OUT</p>
+				<p class="textCheckout two"></p>
+			</div>
+			<div class="checkinTime3" style="display:none;">
+				<p class="checkinoutText">CHECK-IN</p>
+				<p class="textCheckin2 three"></p>
+			</div>
+			<div class="checkinTime4" style="display:none;">
+				<p class="checkinoutText">CHECK-OUT</p>
+				<p class="textCheckout2 four"></p>
+			</div>
+		</div>
+		
+		<div class="title">
+			<p>Welcome to Omnie Solutions</p>
+		</div>
+
+		<div class="time">
+			<div class="text">
+				Current Time
+			</div>
+			<div class="specificTime">
+				<div class="hours">
+					
+				</div>
+
+				<div class="colon">:</div>
+				<div class="minutes">
+					
+				</div>
+
+				<div class="ampm">
+					
+				</div>
+			</div>
+		</div>
+
+		<div class="loginContainer">
+			<div class="loginClick"><p id="loginClick">LOGIN</p></div>
+			<div class="login" style="display:none">
+				<form id="login">
+					<input class ="formField" id="userEmail" type="text" name="Email"  placeholder="Employee ID">
+	                <input class ="formField password" id="userPassword" type="password" name="Password" placeholder="Password">
+	                <p class="registerText">Don't have an account? Click here to register!</p>
+				</form>
+				<div class="enterCancel">
+					<div class="cancel">
+						<p>CANCEL</p>
+					</div>
+					<div class="line">
+						<p>|</p>
+					</div>
+					<div class="loginBtn">
+						<p>LOGIN</p>
+					</div>					
+				</div>
+			</div>
+		</div>
+
+		<div class="exceedCheck" style="display:none">
+			<p>You have exceeded the number of check-ins for today</p>
+		</div>
+
+		<div class="checkInContainer" id="hideMe" style="display:none">
+			<label class="labelfile" id="enter">
+				<input class="inputfile" id="checkinPicture" type="file" accept="image/*" capture="camera" />
+						CHECK-IN 
+			</label>
+		</div>
+
+		<div id="checkOutContainer" style="display:none">
+			<div id="checkOut"><p>CHECK-OUT</p></div>
+		</div>
+
+		<div class="checkInContainer2" style="display:none">
+			<label class="labelfile" id="enter2">
+				<input class="inputfile2" id="checkinPicture2" type="file" accept="image/*" capture="camera" />
+						<p>CHECK-IN</p>
+			</label>
+		</div>
+
+		<div id="checkOutContainer2" style="display:none">
+			<div id="checkOut2"><p>CHECK-OUT</p></div>
+		</div>	
+
+	</div>	
+
+
+<script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+<script type=text/javascript src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/test.js"></script>
+
+</body>
+</html>
