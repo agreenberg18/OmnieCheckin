@@ -1,3 +1,8 @@
+#progress{
+	    left:0; right:0;
+        top:0; bottom:0;
+        margin:auto;
+}
 body{
 	margin-left: 0;
 	margin-right:0;
@@ -36,7 +41,7 @@ body{
 	text-align: center;
 	color:#000000;
 	width:100%;
-	font-size: 18px
+	font-size: 18px;
 	font-weight:100;
 	font-family: "museo-sans";
 }
@@ -117,7 +122,7 @@ body{
 	bottom:0;
 	width:100%;
 	z-index: 10;	
-	font-family: "museo-sans"
+	font-family: "museo-sans";
 	font-size:22px;
 
 }
@@ -214,6 +219,23 @@ body{
 	position: absolute;
 	z-index: -1;
 }
+.inputfile3 {
+	width: 0.1px;
+	height: 100%;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile4{
+	width: 0.1px;
+	height: 100%;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
 
 #enter2{
 	height:71px;
@@ -228,7 +250,33 @@ body{
 	color:white;
 }
 
-.inputfile + .labelfile {
+#enter3{
+	height:71px;
+	display:table-cell;
+	vertical-align: middle;
+	text-align: center;
+	width: 100vw;
+	font-family: "museo-sans";
+	font-weight: 500;
+	font-size: 22px;
+	background-color: #5bd652;
+	color:white;
+}
+
+#enter4{
+	height:71px;
+	display:table-cell;
+	vertical-align: middle;
+	text-align: center;
+	width: 100vw;
+	font-family: "museo-sans";
+	font-weight: 500;
+	font-size: 22px;
+	background-color: #5bd652;
+	color:white;
+}
+
+.inputfile + .labelfile + .inputfile2 + .inputfile3 + .inputfile4{
 	display:flex;
 	justify-content: center;
 	align-items: center;
@@ -250,21 +298,21 @@ body{
 .enterBtn{
 	width:100%;
 	font-size: 22px;
-	font-family: "museo-sans"
+	font-family: "museo-sans";
 	font-weight: 500;
 }
 
 .loginBtn{
 	width:100%;
 	font-size: 22px;
-	font-family: "museo-sans"
+	font-family: "museo-sans";
 	font-weight: 500;	
 }
 
 .cancel{
 	width:100%;
 	font-size: 22px;
-	font-family: "museo-sans"
+	font-family: "museo-sans";
 	font-weight: 500;
 }
 

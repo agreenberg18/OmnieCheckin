@@ -1,62 +1,49 @@
 $(document).ready(function(){
-	// Initialize Firebase
-	var config = {
-		apiKey: "AIzaSyCx-oL-c4MZyfZpRu6ay-SFiUPpLv7JBlc",
-		authDomain: "checkinapp-dc892.firebaseapp.com",
-		databaseURL: "https://checkinapp-dc892.firebaseio.com",
-		storageBucket: "checkinapp-dc892.appspot.com",
-		messagingSenderId: "761473046167"
-	};
-	firebase.initializeApp(config);
-
 
 	$('.submitBtn').click(function(){
 		var emailSignup = $('#emailSignup').val();
-		var toLower = emailSignup.toLowerCase();
-		var emailFormat = toLower.replace(/\./g, "-");
-		console.log(emailFormat);
 		var passwordSignup = $('#passwordSignup').val();
-		var nameSignup = $('#nameSignup').val();
-		firebase.auth().createUserWithEmailAndPassword(emailSignup, passwordSignup).catch(function(error) { 
-		});
-		//setTimeout(
-		createdUser(emailFormat,nameSignup)//,2000);
+		var passwordSignup2 = $('#passwordSignup2').val();
+		var emailUpper = emailSignup.toUpperCase();
+		var signupObj={};
+		if ((emailSignup != "" && (passwordSignup == passwordSignup2))){
+			signupObj= {
+			"empId": emailUpper,
+			"password" : passwordSignup
+			}
+			signUp(signupObj);
+		}
+		else{
+			alert("Enter all fields and make sure passwords match eachother")
+		}
 	});
+
+	function signUp(signupObj){
+				console.log(signupObj);
+				$.ajax({
+					type : 'POST',
+					url : 'http://121.243.75.240:8080/attendance/api/login/register',
+					dataType: 'json',
+					contentType:'application/json',
+					crossDomain: true,
+					//	 processData: false,
+					data : JSON.stringify(signupObj),
+					timeout : 5000,
+					success : function(responseData) {
+					console.log(("response"+JSON.stringify(responseData)));
+					console.log("success");
+					alert("Registration Successful! Please Log-in");
+					window.location.replace("./index.html")
+					},
+					error : function(jqXHR, textStatus) {
+					console.log(("error"+JSON.stringify(jqXHR)));
+					}
+				});
+	}
 
 		$('.goBack').click(function(){
 			window.location.replace("./index.html");
 		});
-
-	function createdUser(emailFormat, nameSignup){
-		firebase.auth().onAuthStateChanged(firebaseUser =>{
-			var user = firebase.auth().currentUser;
-			if (firebaseUser) {
-				if (firebase.auth().currentUser.emailVerified) {
-	                console.log('You are verified');
-	            } 
-				else {
-					console.log('user but not verified')
-					$('.verifyText').show();					
-					user.sendEmailVerification();
-					var nameEmail = {};
-
-					nameEmail[emailFormat]=nameSignup;
-					console.log(nameSignup);
-					userRef = firebase.database().ref('Emails/')
-					userRef.update(nameEmail)
-					$('.signUpForm').hide();
-					$('.submitBtn').hide();
-					$('.lineText').hide();
-					$('.cancelText').text('Go back')
-
-				}
-			}
-			else{
-				console.log('wrong email/password');
-			}
-			
-		})			
-	}
 
 	$('.cancelBtn').click(function(){
 		window.location.replace("./index.html");
@@ -64,7 +51,7 @@ $(document).ready(function(){
 
 				$(document).keypress(function(e) {
     if(e.which == 13) {
-        if (($('#emailSignup').val() != undefined) && ($('#passwordSignup').val() != undefined) && ($('#nameSignup').val() !=undefined) ){
+        if (($('#emailSignup').val() != undefined) && ($('#passwordSignup').val() != undefined)){
         	$('.loginBtn').click();
         }
         else{
